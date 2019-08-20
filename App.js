@@ -1,13 +1,15 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar } from 'react-native';
-import Home from './src/scenes/home';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import HomeScreen from './src/scenes/home';
+import GuideScreen from './src/scenes/guide';
 
-const App = () => {
-  return (
-    <>
-      <Home />
-    </>
-  );
-};
+const AppNavigator = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Guide: GuideScreen,
+  },
+  {
+    initialRouteName: 'Home',
+  },
+);
 
-export default App;
+export default createAppContainer(AppNavigator);

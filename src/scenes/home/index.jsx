@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Button } from 'react-native';
 
-const Home = () => {
+const Home = (props) => {
   return (
     <View>
-      <Text>balblabla</Text>
+      <Button title="Vai pro guia !" onPress={() => props.navigation.navigate('Guide')} />
     </View>
   );
 };
